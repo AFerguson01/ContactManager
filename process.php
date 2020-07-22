@@ -77,7 +77,7 @@ if(isset($_POST['update'])){
 
     if ($validationsuccess == true){
         // $mysqli->query("UPDATE contacts SET First='$first', Last='$last', Email= '$email', D.O.B = '$dob' WHERE contacts.ID = $id;") or die($mysqli->error());
-        $mysqli->query("UPDATE contacts SET First='$first', Last='$last', Email= '$email', DOB='$dob' WHERE ID='$id'") or die($mysqli->error());
+        $mysqli->query("UPDATE contacts SET First='$first', Last='$last', Email= '$email', DOB='$dob' WHERE ID=42") or die($mysqli->error());
 
         $_SESSION['message'] = "Record Saved!";
         $_SESSION['msg_type'] = "success";
