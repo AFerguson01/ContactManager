@@ -21,10 +21,9 @@ if (isset($_POST["save"])){
     $month = $_POST['month'];
     $year = $_POST['year'];
     $dob = $year."-".$month."-".$day; 
-    $dob= date('Y-m-d', strtotime($dob));
 
     if ($validationsuccess == true){
-        $mysqli->query("INSERT INTO contacts (First, Last, Email, `D.O.B`, ID) VALUES('$first', '$last', '$email', '$dob', 'NULL')") or die($mysqli->error());
+        $mysqli->query("INSERT INTO contacts (First, Last, Email, `DOB`, ID) VALUES('$first', '$last', '$email', '$dob', 'NULL')") or die($mysqli->error());
 
         $_SESSION['message'] = "Record Saved!";
         $_SESSION['msg_type'] = "success";
@@ -55,7 +54,7 @@ if (isset($_GET['edit'])){
         $first = $row['First'];
         $last = $row['Last'];
         $email = $row['Email'];
-        $dob = explode("-", $row['D.O.B']);
+        $dob = explode("-", $row['DOB']);
         $day = $dob[2];
         $month = $dob[1];
         $year = $dob[0];
@@ -63,7 +62,7 @@ if (isset($_GET['edit'])){
 }
 
 if(isset($_POST['update'])){
-    $id = $_POST['update'];
+    $id = $_POST['id'];
     
     $validationsuccess = true;
 
@@ -75,11 +74,10 @@ if(isset($_POST['update'])){
     $month = $_POST['month'];
     $year = $_POST['year'];
     $dob = $year."-".$month."-".$day; 
-    $dob= date('Y-m-d', strtotime($dob));
 
     if ($validationsuccess == true){
         // $mysqli->query("UPDATE contacts SET First='$first', Last='$last', Email= '$email', D.O.B = '$dob' WHERE contacts.ID = $id;") or die($mysqli->error());
-        $mysqli->query("UPDATE `contacts` SET `First` = '$first', `Last` = '$last', `Email` = '$email', `D.O.B` = '$dob' WHERE `contacts`.`ID` = 38") or die($mysqli->error());
+        $mysqli->query("UPDATE contacts SET First='$first', Last='$last', Email= '$email', DOB='$dob' WHERE ID=42") or die($mysqli->error());
 
         $_SESSION['message'] = "Record Saved!";
         $_SESSION['msg_type'] = "success";
