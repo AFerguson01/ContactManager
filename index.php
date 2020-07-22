@@ -112,7 +112,7 @@
                                 <td><?php echo $row['First']; ?></td>
                                 <td><?php echo $row['Last']; ?></td>
                                 <td><?php echo $row['Email']; ?></td>
-                                <td><?php echo $row['D.O.B']; ?></td>
+                                <td><?php echo $row['DOB']; ?></td>
                                 <td>
                                     <a href="index.php?edit=<?php echo $row['ID'];?>" class="btn btn-secondary">Edit</a>
                                     <a href="process.php?delete=<?php echo $row['ID'];?>" class="btn btn-danger">Delete</a>
